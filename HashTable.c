@@ -84,7 +84,7 @@ int main()
     int a=0,b=0;
     HashData *data;
     
-    printf("HashTable in C\n\n");
+    printf("用C实现的int哈希表\n\n");
     printf("1.初始化散列表\n请输入散列表长度\n");
     scanf("%d",&a);
     Hash_Init(&ht,a);
