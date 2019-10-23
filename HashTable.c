@@ -4,11 +4,11 @@
 //powered by shadowfish
 //该代码用于建立key为正整数，value为整数的哈希表。哈希算法为key与哈希表长度取余。
 
-typedef struct HashDataS
+typedef struct HashData
 {
     int key;
     int value;
-    struct HashDataS *next;
+    struct HashData *next;
 }HashData;
 
 typedef struct
@@ -86,7 +86,15 @@ int main()
     
     printf("用C实现的int哈希表\n\n");
     printf("1.初始化散列表\n请输入散列表长度\n");
-    scanf("%d",&a);
+    while (1)
+    {
+        fflush(stdin);
+        scanf("%d",&a); 
+        if(a<=0) 
+            printf("散列表初始化失败，请输入有效数值\n");
+        else
+            break;
+    }
     Hash_Init(&ht,a);
     printf("散列表初始化完成（长度%d）\n",a);
     printf("2.插入数据\n请输入键值对,输入-99 -99以结束\n");
