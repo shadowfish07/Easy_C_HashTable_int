@@ -91,12 +91,10 @@ int main()
     int a=0,b=0;
     HashData *data;
     Hash_Init(&ht,a);
-    char* aaaa="ssadad";
-    printf("%s",aaaa);
-    char (*bbbbb)[30]={"ABCD","EFDG","12122"};
     char* aa[30]={"232323","asdsdad2","asdr22"};
     char* *ap=aa;
-    printf("%s",*(ap+1));
+    printf("%s",ap[0]);
+    printf("%s",aa);
     Hash_insert(ht,"my",ap);
     printf("用C实现的int哈希表\n\n");
     printf("1.初始化散列表\n请输入散列表长度\n");
