@@ -56,7 +56,7 @@ int Hash_insert(HashTable hashTable,char* key,char **value)
     HashData *tmp =malloc(sizeof(HashData));
     tmp->key=key;
     tmp->value=value;
-    //printf("%s",tmp->value[0][1]);
+    
     
     //插入时检测是否已经存在key值
     if (Hash_Search(hashTable,key)!= NULL)
@@ -91,8 +91,14 @@ int main()
     int a=0,b=0;
     HashData *data;
     Hash_Init(&ht,a);
+
+char (*cp)[20]={"ABCDEFDG12122"};
+char bbb[]={"23328888888888888888888888ydfgdfgdfggdgf"};
+cp=bbb;
+printf("%s",cp);
     char* aa[30]={"232323","asdsdad2","asdr22"};
     char* *ap=aa;
+    
     printf("%s",ap[0]);
     printf("%s",aa);
     Hash_insert(ht,"my",ap);
