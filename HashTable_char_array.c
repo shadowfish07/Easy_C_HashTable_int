@@ -11,7 +11,7 @@
 typedef struct HashData
 {
     char *key;
-    char (*value)[MAXICHAR_INDEX_COLUMN];
+    char* *value;
     struct HashData *next;
 }HashData;
 
@@ -50,13 +50,13 @@ unsigned int Hash_addr(HashTable hashTable, char *key)
 }
 
 //插入
-int Hash_insert(HashTable hashTable,char* key,char **value)
+int Hash_insert(HashTable hashTable,char* key,char* *value)
 {
     //新建一个HashData
     HashData *tmp =malloc(sizeof(HashData));
     tmp->key=key;
     tmp->value=value;
-    
+    printf("%s",tmp->value[1]);
     
     //插入时检测是否已经存在key值
     if (Hash_Search(hashTable,key)!= NULL)
@@ -92,15 +92,9 @@ int main()
     HashData *data;
     Hash_Init(&ht,a);
 
-char (*cp)[20]={"ABCDEFDG12122"};
-char bbb[]={"23328888888888888888888888ydfgdfgdfggdgf"};
-cp=bbb;
-printf("%s",cp);
     char* aa[30]={"232323","asdsdad2","asdr22"};
     char* *ap=aa;
-    
-    printf("%s",ap[0]);
-    printf("%s",aa);
+
     Hash_insert(ht,"my",ap);
     printf("用C实现的int哈希表\n\n");
     printf("1.初始化散列表\n请输入散列表长度\n");
